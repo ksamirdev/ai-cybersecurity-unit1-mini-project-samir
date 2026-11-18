@@ -1,0 +1,389 @@
+{
+  "eda": {
+    "raw_rows": 11055,
+    "raw_legitimate": 6157,
+    "raw_phishing": 4898,
+    "conflicting": 128,
+    "rows": 5849,
+    "features": 30,
+    "missing": 0,
+    "duplicates": 5206,
+    "legitimate": 2830,
+    "phishing": 3019,
+    "mean_signals_legit": 8.1,
+    "mean_signals_phish": 10.5,
+    "indicators": [
+      {
+        "feature": "SSLfinal_State",
+        "corr": 0.693,
+        "flagged_share": 36.4,
+        "phishing_rate_when_flagged": 87.6,
+        "phishing_rate_otherwise": 31.0
+      },
+      {
+        "feature": "URL_of_Anchor",
+        "corr": 0.679,
+        "flagged_share": 34.2,
+        "phishing_rate_when_flagged": 99.1,
+        "phishing_rate_otherwise": 26.9
+      },
+      {
+        "feature": "Prefix_Suffix",
+        "corr": 0.381,
+        "flagged_share": 88.0,
+        "phishing_rate_when_flagged": 58.6,
+        "phishing_rate_otherwise": 0.0
+      },
+      {
+        "feature": "having_Sub_Domain",
+        "corr": 0.296,
+        "flagged_share": 29.1,
+        "phishing_rate_when_flagged": 61.4,
+        "phishing_rate_otherwise": 47.6
+      },
+      {
+        "feature": "web_traffic",
+        "corr": 0.282,
+        "flagged_share": 25.1,
+        "phishing_rate_when_flagged": 64.9,
+        "phishing_rate_otherwise": 47.2
+      },
+      {
+        "feature": "SFH",
+        "corr": 0.281,
+        "flagged_share": 74.8,
+        "phishing_rate_when_flagged": 59.4,
+        "phishing_rate_otherwise": 28.6
+      },
+      {
+        "feature": "Links_in_tags",
+        "corr": 0.244,
+        "flagged_share": 38.0,
+        "phishing_rate_when_flagged": 67.0,
+        "phishing_rate_otherwise": 42.2
+      },
+      {
+        "feature": "Request_URL",
+        "corr": 0.238,
+        "flagged_share": 44.0,
+        "phishing_rate_when_flagged": 65.0,
+        "phishing_rate_otherwise": 41.1
+      }
+    ]
+  },
+  "ml": {
+    "Logistic Regression": {
+      "accuracy": 0.9358974358974359,
+      "precision": 0.9460370994940978,
+      "recall": 0.9288079470198676,
+      "f1": 0.9373433583959899,
+      "train_seconds": 0.02559191700129304,
+      "predict_ms": 3.0808340015937574,
+      "tn": 534,
+      "fp": 32,
+      "fn": 43,
+      "tp": 561
+    },
+    "Decision Tree": {
+      "accuracy": 0.9256410256410257,
+      "precision": 0.9388794567062818,
+      "recall": 0.9155629139072847,
+      "f1": 0.9270746018440905,
+      "train_seconds": 0.014536582995788194,
+      "predict_ms": 2.5524580050841905,
+      "tn": 530,
+      "fp": 36,
+      "fn": 51,
+      "tp": 553
+    }
+  },
+  "lr_top_weights": {
+    "URL_of_Anchor_-1": 3.456,
+    "SSLfinal_State_1": -2.582,
+    "SSLfinal_State_0": 2.322,
+    "URL_of_Anchor_1": -2.187,
+    "Prefix_Suffix": -2.042,
+    "web_traffic_0": 1.186,
+    "URL_of_Anchor_0": -1.071,
+    "SFH_-1": 1.058,
+    "Links_in_tags_-1": 0.905,
+    "having_Sub_Domain_1": -0.897,
+    "having_IP_Address": -0.736,
+    "web_traffic_1": -0.715
+  },
+  "dl": {
+    "accuracy": 0.9418803418803419,
+    "precision": 0.9604810996563574,
+    "recall": 0.9254966887417219,
+    "f1": 0.9426644182124789,
+    "train_seconds": 0.18930741700023646,
+    "predict_ms": 2.959707999252714,
+    "tn": 543,
+    "fp": 23,
+    "fn": 45,
+    "tp": 559,
+    "epochs": 32,
+    "parameters": 5121,
+    "cv_f1_mean": 0.9405860305485223,
+    "cv_f1_std": 0.005625482412057833
+  },
+  "comparison": {
+    "Logistic Regression": {
+      "accuracy": 0.9358974358974359,
+      "precision": 0.9460370994940978,
+      "recall": 0.9288079470198676,
+      "f1": 0.9373433583959899,
+      "train_seconds": 0.02559191700129304,
+      "predict_ms": 3.0808340015937574,
+      "tn": 534,
+      "fp": 32,
+      "fn": 43,
+      "tp": 561,
+      "cv_f1_mean": 0.9375579084177561,
+      "cv_f1_std": 0.006070503059776458
+    },
+    "Decision Tree": {
+      "accuracy": 0.9256410256410257,
+      "precision": 0.9388794567062818,
+      "recall": 0.9155629139072847,
+      "f1": 0.9270746018440905,
+      "train_seconds": 0.014536582995788194,
+      "predict_ms": 2.5524580050841905,
+      "tn": 530,
+      "fp": 36,
+      "fn": 51,
+      "tp": 553,
+      "cv_f1_mean": 0.9368579966961095,
+      "cv_f1_std": 0.004891149753860738
+    },
+    "Neural Network": {
+      "accuracy": 0.9418803418803419,
+      "precision": 0.9604810996563574,
+      "recall": 0.9254966887417219,
+      "f1": 0.9426644182124789,
+      "train_seconds": 0.18930741700023646,
+      "predict_ms": 2.959707999252714,
+      "tn": 543,
+      "fp": 23,
+      "fn": 45,
+      "tp": 559,
+      "epochs": 32,
+      "parameters": 5121,
+      "cv_f1_mean": 0.9405860305485223,
+      "cv_f1_std": 0.005625482412057833
+    }
+  },
+  "ethics": {
+    "threshold_sweep": [
+      {
+        "threshold": 0.05,
+        "fpr": 0.3375,
+        "fnr": 0.0017,
+        "accuracy": 0.8359,
+        "f1": 0.8627,
+        "legit_blocked_per_10k": 3375,
+        "phish_missed_per_10k": 17
+      },
+      {
+        "threshold": 0.1,
+        "fpr": 0.2332,
+        "fnr": 0.0116,
+        "accuracy": 0.8812,
+        "f1": 0.8957,
+        "legit_blocked_per_10k": 2332,
+        "phish_missed_per_10k": 116
+      },
+      {
+        "threshold": 0.15,
+        "fpr": 0.182,
+        "fnr": 0.0116,
+        "accuracy": 0.906,
+        "f1": 0.9156,
+        "legit_blocked_per_10k": 1820,
+        "phish_missed_per_10k": 116
+      },
+      {
+        "threshold": 0.2,
+        "fpr": 0.1413,
+        "fnr": 0.0199,
+        "accuracy": 0.9214,
+        "f1": 0.9279,
+        "legit_blocked_per_10k": 1413,
+        "phish_missed_per_10k": 199
+      },
+      {
+        "threshold": 0.25,
+        "fpr": 0.1237,
+        "fnr": 0.0281,
+        "accuracy": 0.9256,
+        "f1": 0.931,
+        "legit_blocked_per_10k": 1237,
+        "phish_missed_per_10k": 281
+      },
+      {
+        "threshold": 0.3,
+        "fpr": 0.1007,
+        "fnr": 0.0447,
+        "accuracy": 0.9282,
+        "f1": 0.9321,
+        "legit_blocked_per_10k": 1007,
+        "phish_missed_per_10k": 447
+      },
+      {
+        "threshold": 0.35,
+        "fpr": 0.0848,
+        "fnr": 0.053,
+        "accuracy": 0.9316,
+        "f1": 0.9346,
+        "legit_blocked_per_10k": 848,
+        "phish_missed_per_10k": 530
+      },
+      {
+        "threshold": 0.4,
+        "fpr": 0.0724,
+        "fnr": 0.0596,
+        "accuracy": 0.9342,
+        "f1": 0.9365,
+        "legit_blocked_per_10k": 724,
+        "phish_missed_per_10k": 596
+      },
+      {
+        "threshold": 0.45,
+        "fpr": 0.0689,
+        "fnr": 0.0679,
+        "accuracy": 0.9316,
+        "f1": 0.9337,
+        "legit_blocked_per_10k": 689,
+        "phish_missed_per_10k": 679
+      },
+      {
+        "threshold": 0.5,
+        "fpr": 0.0565,
+        "fnr": 0.0712,
+        "accuracy": 0.9359,
+        "f1": 0.9373,
+        "legit_blocked_per_10k": 565,
+        "phish_missed_per_10k": 712
+      },
+      {
+        "threshold": 0.55,
+        "fpr": 0.053,
+        "fnr": 0.0795,
+        "accuracy": 0.9333,
+        "f1": 0.9345,
+        "legit_blocked_per_10k": 530,
+        "phish_missed_per_10k": 795
+      },
+      {
+        "threshold": 0.6,
+        "fpr": 0.053,
+        "fnr": 0.0944,
+        "accuracy": 0.9256,
+        "f1": 0.9263,
+        "legit_blocked_per_10k": 530,
+        "phish_missed_per_10k": 944
+      },
+      {
+        "threshold": 0.65,
+        "fpr": 0.0424,
+        "fnr": 0.106,
+        "accuracy": 0.9248,
+        "f1": 0.9247,
+        "legit_blocked_per_10k": 424,
+        "phish_missed_per_10k": 1060
+      },
+      {
+        "threshold": 0.7,
+        "fpr": 0.0336,
+        "fnr": 0.1209,
+        "accuracy": 0.9214,
+        "f1": 0.9203,
+        "legit_blocked_per_10k": 336,
+        "phish_missed_per_10k": 1209
+      },
+      {
+        "threshold": 0.75,
+        "fpr": 0.023,
+        "fnr": 0.1374,
+        "accuracy": 0.9179,
+        "f1": 0.9156,
+        "legit_blocked_per_10k": 230,
+        "phish_missed_per_10k": 1374
+      },
+      {
+        "threshold": 0.8,
+        "fpr": 0.0177,
+        "fnr": 0.1507,
+        "accuracy": 0.9137,
+        "f1": 0.9104,
+        "legit_blocked_per_10k": 177,
+        "phish_missed_per_10k": 1507
+      },
+      {
+        "threshold": 0.85,
+        "fpr": 0.0159,
+        "fnr": 0.1722,
+        "accuracy": 0.9034,
+        "f1": 0.8985,
+        "legit_blocked_per_10k": 159,
+        "phish_missed_per_10k": 1722
+      },
+      {
+        "threshold": 0.9,
+        "fpr": 0.0088,
+        "fnr": 0.2003,
+        "accuracy": 0.8923,
+        "f1": 0.8846,
+        "legit_blocked_per_10k": 88,
+        "phish_missed_per_10k": 2003
+      },
+      {
+        "threshold": 0.95,
+        "fpr": 0.0053,
+        "fnr": 0.245,
+        "accuracy": 0.8709,
+        "f1": 0.8579,
+        "legit_blocked_per_10k": 53,
+        "phish_missed_per_10k": 2450
+      }
+    ],
+    "bias": [
+      {
+        "scenario": "Fair training data",
+        "accuracy": 0.9359,
+        "f1": 0.9373,
+        "fpr_young": 0.0735,
+        "fpr_established": 0.0408,
+        "fnr_overall": 0.0712
+      },
+      {
+        "scenario": "Biased training data",
+        "accuracy": 0.8872,
+        "f1": 0.8981,
+        "fpr_young": 0.3603,
+        "fpr_established": 0.0408,
+        "fnr_overall": 0.0364
+      },
+      {
+        "scenario": "Biased + reweighting",
+        "accuracy": 0.9265,
+        "f1": 0.9276,
+        "fpr_young": 0.0809,
+        "fpr_established": 0.0374,
+        "fnr_overall": 0.0877
+      },
+      {
+        "scenario": "Biased + young-domain threshold 0.94",
+        "accuracy": 0.9291,
+        "f1": 0.9302,
+        "fpr_young": 0.0735,
+        "fpr_established": 0.0408,
+        "fnr_overall": 0.0844
+      }
+    ],
+    "legit_young_train_fair": 1021,
+    "legit_young_train_biased": 53,
+    "young_legit_test": 272,
+    "t_young": 0.94
+  }
+}
